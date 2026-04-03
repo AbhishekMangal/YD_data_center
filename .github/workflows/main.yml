@@ -1,0 +1,28 @@
+name: Collection YouTube Data
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # 1st of every month at midnight UTC
+  workflow_dispatch:
+    inputs:
+      month:
+        description: 'Target month (e.g. 2026-03). Leave empty for current month.'
+        required: false
+        default: ''
+      countries:
+        description: 'Country codes space-separated (e.g. US IN GB). Leave empty for all.'
+        required: false
+        default: ''
+      max_results:
+        description: 'Max videos per country (e.g. 20). Leave empty for default 50.'
+        required: false
+        default: ''
+
+jobs:
+  Data-collection:
+    uses: ./.github/workflows/data-collection.yml
+    with:
+      month: ${{ github.event.inputs.month || '' }}
+      countries: ${{ github.event.inputs.countries || '' }}
+      max_results: ${{ github.event.inputs.max_results || '' }}
+    secrets: inherit

@@ -1,0 +1,111 @@
+name: Data Collection
+
+on:
+  workflow_call:
+    inputs:
+      month:
+        description: 'Target month (e.g. 2026-03)'
+        required: false
+        type: string
+        default: ''
+      countries:
+        description: 'Country codes space-separated (e.g. US IN GB)'
+        required: false
+        type: string
+        default: ''
+      max_results:
+        description: 'Max videos per country (e.g. 20)'
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-data:
+    name: Fetch YouTube Trending Data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch trending videos
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          python scripts/fetch_trending.py \
+            --month "${{ inputs.month || '' }}" \
+            --countries ${{ inputs.countries || 'US IN GB BR JP DE' }} \
+            --max-results "${{ inputs.max_results || '50' }}"
+
+      - name: Upload raw data
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-data
+          path: data/raw/
+
+  process-data:
+    name: Process & Analyze Data
+    needs: fetch-data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download raw data
+        uses: actions/download-artifact@v4
+        with:
+          name: raw-data
+          path: data/raw/
+
+      - name: Analyze trends
+        run: |
+          python scripts/analyze_trends.py \
+            --month "${{ inputs.month || '' }}"
+
+      - name: Upload processed data
+        uses: actions/upload-artifact@v4
+        with:
+          name: processed-data
+          path: data/processed/
+
+  save-data:
+    name: Save Data to Repository
+    needs: process-data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download processed data
+        uses: actions/download-artifact@v4
+        with:
+          name: processed-data
+          path: data/processed/
+
+      - name: Commit and push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/processed/
+          MONTH="${{ inputs.month }}"
+          if [ -z "$MONTH" ]; then MONTH=$(date +%Y-%m); fi
+          git commit -m "Add processed trending data for ${MONTH}" || echo "No changes to commit"
+          git push
