@@ -19,9 +19,6 @@ on:
         type: string
         default: ''
 
-permissions:
-  contents: write
-
 jobs:
   fetch-data:
     name: Fetch YouTube Trending Data
@@ -91,8 +88,17 @@ jobs:
     needs: process-data
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout data branch
         uses: actions/checkout@v4
+        with:
+          ref: data
+          fetch-depth: 0
+
+      - name: Create data branch if not exists
+        run: |
+          git checkout data 2>/dev/null || git checkout --orphan data
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Download processed data
         uses: actions/download-artifact@v4
@@ -100,12 +106,10 @@ jobs:
           name: processed-data
           path: data/processed/
 
-      - name: Commit and push results
+      - name: Commit and push to data branch
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/processed/
           MONTH="${{ inputs.month }}"
           if [ -z "$MONTH" ]; then MONTH=$(date +%Y-%m); fi
           git commit -m "Add processed trending data for ${MONTH}" || echo "No changes to commit"
-          git push
+          git push origin data
