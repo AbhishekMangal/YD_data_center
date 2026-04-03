@@ -1,0 +1,208 @@
+{
+  "category_global": [
+    {
+      "category_name": "Gaming",
+      "video_count": 7,
+      "total_views": 5553274,
+      "avg_views": 793325.0,
+      "avg_likes": 38170.0,
+      "avg_comments": 2321.0
+    },
+    {
+      "category_name": "Music",
+      "video_count": 6,
+      "total_views": 34896961,
+      "avg_views": 5816160.0,
+      "avg_likes": 577989.0,
+      "avg_comments": 41618.0
+    },
+    {
+      "category_name": "Entertainment",
+      "video_count": 3,
+      "total_views": 2982982,
+      "avg_views": 994327.0,
+      "avg_likes": 41570.0,
+      "avg_comments": 3710.0
+    },
+    {
+      "category_name": "Film & Animation",
+      "video_count": 2,
+      "total_views": 3773398,
+      "avg_views": 1886699.0,
+      "avg_likes": 69566.0,
+      "avg_comments": 4884.0
+    },
+    {
+      "category_name": "People & Blogs",
+      "video_count": 2,
+      "total_views": 1998689,
+      "avg_views": 999344.0,
+      "avg_likes": 36308.0,
+      "avg_comments": 1619.0
+    }
+  ],
+  "category_country_matrix": {
+    "countries": [
+      "IN"
+    ],
+    "categories": [
+      "Entertainment",
+      "Film & Animation",
+      "Gaming",
+      "Music",
+      "People & Blogs"
+    ],
+    "data": [
+      [
+        3,
+        2,
+        7,
+        6,
+        2
+      ]
+    ]
+  },
+  "top_channels": [
+    {
+      "channel_title": "Aaradhya Films",
+      "channel_id": "UCGkwDqdaNZsCLO0ihZLBMQA",
+      "appearances": 1,
+      "total_views": 5703703
+    },
+    {
+      "channel_title": "Bhumi Original",
+      "channel_id": "UCmZ9jTyKVBgto5rsxopsdlQ",
+      "appearances": 1,
+      "total_views": 225908
+    },
+    {
+      "channel_title": "Carry Depie",
+      "channel_id": "UClqifC6Nd7v-IfTqce4k62A",
+      "appearances": 1,
+      "total_views": 941684
+    },
+    {
+      "channel_title": "Dil Hits Haryanvi",
+      "channel_id": "UCIORX5S5uOSKtKecNOWJBrg",
+      "appearances": 1,
+      "total_views": 424534
+    },
+    {
+      "channel_title": "FlickVerse",
+      "channel_id": "UCo5C_QyORRvumZuTalhaazA",
+      "appearances": 1,
+      "total_views": 731504
+    },
+    {
+      "channel_title": "HYBE LABELS",
+      "channel_id": "UC3IZKseVpdzPSBaWxBxundA",
+      "appearances": 1,
+      "total_views": 19281046
+    },
+    {
+      "channel_title": "Hansraj Raghuwanshi",
+      "channel_id": "UCigV1clokmoz4LZrGL9fRNw",
+      "appearances": 1,
+      "total_views": 1310429
+    },
+    {
+      "channel_title": "JioStudios",
+      "channel_id": "UCcXQd6kHKm0b41x8zMVMmMg",
+      "appearances": 1,
+      "total_views": 1779391
+    },
+    {
+      "channel_title": "Junkeyy",
+      "channel_id": "UCJS4UHGP6Q3BI-0ZIGrGXgw",
+      "appearances": 1,
+      "total_views": 531999
+    },
+    {
+      "channel_title": "Magic Frames",
+      "channel_id": "UCmUODKy5Ilf4TFZmp2ZcUyA",
+      "appearances": 1,
+      "total_views": 472087
+    },
+    {
+      "channel_title": "Nikhil Nanda Motion Pictures ",
+      "channel_id": "UCEHAU3zWMYitta6Bz8R2_mA",
+      "appearances": 1,
+      "total_views": 1574155
+    },
+    {
+      "channel_title": "PJ Explained",
+      "channel_id": "UCWkHlUiYLeRSIMP8yM7rxxg",
+      "appearances": 1,
+      "total_views": 574043
+    },
+    {
+      "channel_title": "Snax Gaming",
+      "channel_id": "UCQfBN7Ut5TiZJAhMo_Rgfyw",
+      "appearances": 1,
+      "total_views": 417449
+    },
+    {
+      "channel_title": "Sony Music India",
+      "channel_id": "UC56gTxNs4f9xZ7Pa2i5xNzg",
+      "appearances": 1,
+      "total_views": 5276531
+    },
+    {
+      "channel_title": "Sree Gokulam Movies",
+      "channel_id": "UC7rP8B90HTEXxQ6ApRVDyVg",
+      "appearances": 1,
+      "total_views": 3199355
+    },
+    {
+      "channel_title": "T-Series",
+      "channel_id": "UCq-Fj5jknLsUf-MWSy4_brA",
+      "appearances": 1,
+      "total_views": 3099344
+    },
+    {
+      "channel_title": "Tyro Gaming",
+      "channel_id": "UCIpN4Y3Pt00Q9KoQMWI77_Q",
+      "appearances": 1,
+      "total_views": 573712
+    },
+    {
+      "channel_title": "Ujjwal",
+      "channel_id": "UCl_vAxZpvbO-PFXdDu7EdHw",
+      "appearances": 1,
+      "total_views": 1624554
+    },
+    {
+      "channel_title": "YesSmartyPie",
+      "channel_id": "UCZ9lCUhUOUrwqVJmfBkN92A",
+      "appearances": 1,
+      "total_views": 719815
+    },
+    {
+      "channel_title": "thePJ",
+      "channel_id": "UCbPUDwXjjV7KOYGdz3tLpXw",
+      "appearances": 1,
+      "total_views": 744061
+    }
+  ],
+  "duration_distribution": {
+    "< 1 min (Shorts)": 0,
+    "1-5 min": 9,
+    "5-10 min": 3,
+    "10-20 min": 4,
+    "20+ min": 4
+  },
+  "global_trending_categories": [],
+  "local_only_categories": {
+    "Entertainment": "IN",
+    "Film & Animation": "IN",
+    "Gaming": "IN",
+    "Music": "IN",
+    "People & Blogs": "IN"
+  },
+  "key_takeaways": [
+    "**Gaming** dominates trending with 7 videos across all countries.",
+    "**Music** has the highest average views per video (5,816,160).",
+    "**Aaradhya Films** appears 1 times in trending \u2014 the most of any channel.",
+    "Most trending videos are **1-5 min** long."
+  ]
+}

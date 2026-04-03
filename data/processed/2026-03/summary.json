@@ -1,0 +1,42 @@
+[
+  {
+    "country": "IN",
+    "category_name": "Entertainment",
+    "video_count": 3,
+    "total_views": 2982982,
+    "avg_views": 994327.0,
+    "avg_likes": 41570.0
+  },
+  {
+    "country": "IN",
+    "category_name": "Film & Animation",
+    "video_count": 2,
+    "total_views": 3773398,
+    "avg_views": 1886699.0,
+    "avg_likes": 69566.0
+  },
+  {
+    "country": "IN",
+    "category_name": "Gaming",
+    "video_count": 7,
+    "total_views": 5553274,
+    "avg_views": 793325.0,
+    "avg_likes": 38170.0
+  },
+  {
+    "country": "IN",
+    "category_name": "Music",
+    "video_count": 6,
+    "total_views": 34896961,
+    "avg_views": 5816160.0,
+    "avg_likes": 577989.0
+  },
+  {
+    "country": "IN",
+    "category_name": "People & Blogs",
+    "video_count": 2,
+    "total_views": 1998689,
+    "avg_views": 999344.0,
+    "avg_likes": 36308.0
+  }
+]
