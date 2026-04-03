@@ -88,17 +88,16 @@ jobs:
     needs: process-data
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout data branch
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: data
           fetch-depth: 0
 
-      - name: Create data branch if not exists
+      - name: Switch to data branch
         run: |
-          git checkout data 2>/dev/null || git checkout --orphan data
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin data_push 2>/dev/null && git checkout data_push || git checkout --orphan data_push
 
       - name: Download processed data
         uses: actions/download-artifact@v4
@@ -112,4 +111,4 @@ jobs:
           MONTH="${{ inputs.month }}"
           if [ -z "$MONTH" ]; then MONTH=$(date +%Y-%m); fi
           git commit -m "Add processed trending data for ${MONTH}" || echo "No changes to commit"
-          git push origin data
+          git push origin data_push
