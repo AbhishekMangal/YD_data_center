@@ -1,8 +1,6 @@
 name: Collection YouTube Data
 
-# on:
-  # schedule:
-    # - cron: '0 0 1 * *'  # 1st of every month at midnight UTC
+on:
   workflow_dispatch:
     inputs:
       month:
